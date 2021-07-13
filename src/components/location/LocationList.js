@@ -9,7 +9,7 @@ export const LocationList = () => {
 
   //useEffect - reach out to the world for something
   useEffect(() => {
-    console.log("locationList: useEffect - getLocations");
+    console.log("LocationList: useEffect - getLocations");
     getLocations();
   }, []);
 
