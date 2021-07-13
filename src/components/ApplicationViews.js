@@ -10,6 +10,7 @@ import { CustomerProvider } from "./customer/CustomerProvider";
 import { CustomerList } from "./customer/CustomerList";
 import { EmployeeProvider } from "./employee/EmployeeProvider";
 import { EmployeeList } from "./employee/EmployeeList";
+import { EmployeeForm } from "./employee/EmployeeForm";
 
 export const ApplicationViews = () => {
   return (
@@ -44,9 +45,14 @@ export const ApplicationViews = () => {
         </Route>
       </CustomerProvider>
       <EmployeeProvider>
-        <Route path="/employees">
-          <EmployeeList />
-        </Route>
+        <LocationProvider>
+          <Route path="/employees">
+            <EmployeeList />
+          </Route>
+          <Route exact path="/employees/newEmployee">
+            <EmployeeForm />
+          </Route>
+        </LocationProvider>
       </EmployeeProvider>
     </>
   );
